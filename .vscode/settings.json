@@ -1,0 +1,27 @@
+{
+  "cSpell.language": "en",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "prettier.configPath": "prettier.config.cjs",
+  "prettier.ignorePath": ".gitignore",
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true
+  },
+  "cSpell.words": [
+    "allargs",
+    "boxoffice",
+    "checkin",
+    "helpdoc",
+    "helpdocation",
+    "imdb",
+    "Kasteel",
+    "noseasons",
+    "ondeck",
+    "pluginname",
+    "runtimes",
+    "scrobble",
+    "watchlist"
+  ]
+}

@@ -17,17 +17,17 @@ trakt.tv-pluginname:
 The `index.js` file has a few mandatory lines:
 
 ```js
-var PluginNAME = module.exports = {}; // Skeleton
-var Trakt; // the main API for trakt (npm: 'trakt.tv')
+var PluginNAME = (module.exports = {}) // Skeleton
+var Trakt // the main API for trakt (npm: 'trakt.tv')
 
 // Initialize the module
 PluginNAME.init = function (trakt) {
-    Trakt = trakt;
-};
+  Trakt = trakt
+}
 
 PluginNAME.myAwesomeFunction = function () {
-    console.log('hello world');
-};
+  console.log('hello world')
+}
 ```
 
 The function "init" is absolutely mandatory, it's what's called automatically by trakt.tv core module.
@@ -35,12 +35,12 @@ The function "init" is absolutely mandatory, it's what's called automatically by
 The function "myAwesomeFunction" will display 'hello world'. Let's see how to use that function inside the main module.
 
 ```js
-var Trakt = require('trakt.tv');
+var Trakt = require('trakt.tv')
 var trakt = new Trakt({
   client_id: '',
   client_secret: '',
   plugins: ['pluginname']
-});
+})
 
-trakt.pluginname.myAwesomeFunction();
+trakt.pluginname.myAwesomeFunction()
 ```
