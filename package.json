@@ -1,37 +1,47 @@
 {
   "name": "trakt.tv",
   "version": "8.2.0",
-  "description": "Interact with Trakt.tv API in NodeJS",
+  "description": "Interact with Trakt.tv API in userscripts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vankasteelj/trakt.tv"
+    "url": "https://github.com/iDavide94/trakt.tv"
   },
   "bugs": {
-    "url": "https://github.com/vankasteelj/trakt.tv/issues"
+    "url": "https://github.com/iDavide94/trakt.tv/issues"
   },
   "author": "Jean van Kasteel",
+  "contributors": [
+    "Davide"
+  ],
   "license": "MIT",
-  "main": "src/trakt.js",
+  "main": "dist/index.js",
   "keywords": [
     "trakt",
     "api",
     "wrapper",
-    "node"
+    "userscript"
   ],
   "scripts": {
+    "build": "rollup -c",
     "docs": "node docs/methods-generator.mjs && prettier --ignore-path .gitignore --write ./docs/available_methods.md",
     "format": "prettier --ignore-path .gitignore --write .",
-    "lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore ."
+    "lint": "prettier --ignore-path .gitignore --check . && cspell --gitignore . && eslint --ignore-path .gitignore .",
+    "update": "updates -u && yarn install",
+    "watch": "rollup -c -w"
   },
-  "dependencies": {
-    "got": "13.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "cspell": "^6.31.2",
     "eslint": "^8.46.0",
+    "eslint-config-greasemonkey": "^1.0.1",
     "eslint-config-prettier": "^8.9.0",
     "prettier": "^3.0.0",
     "prettier-config-standard": "^5.0.0",
     "prettier-plugin-pkg": "^0.18.0",
-    "prettier-plugin-sort-json": "^1.0.0"
+    "prettier-plugin-sort-json": "^1.0.0",
+    "rollup": "^3.27.0",
+    "updates": "^14.3.4"
   }
 }
