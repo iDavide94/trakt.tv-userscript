@@ -6,7 +6,7 @@ const name = 'Trakt'
 
 export default [
   {
-    input: 'src/index.js',
+    input: 'src/trakt.js',
     output: [
       {
         file: './dist/index.js',
