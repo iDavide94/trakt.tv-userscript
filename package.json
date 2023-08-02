@@ -1,5 +1,5 @@
 {
-  "name": "trakt.tv",
+  "name": "@idavide94/trakt",
   "version": "8.2.0",
   "description": "Interact with Trakt.tv API in userscripts",
   "repository": {
@@ -15,6 +15,9 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
   "keywords": [
     "trakt",
     "api",

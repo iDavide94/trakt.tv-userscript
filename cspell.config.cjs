@@ -9,6 +9,7 @@ module.exports = {
     'Greasemonkey',
     'helpdoc',
     'helpdocation',
+    'idavide94',
     'iife',
     'IMDb',
     'Kasteel',
