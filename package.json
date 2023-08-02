@@ -4,12 +4,15 @@
   "description": "Interact with Trakt.tv API in userscripts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iDavide94/trakt.tv"
+    "url": "https://github.com/iDavide94/trakt.tv.git"
   },
+  "homepage": "https://github.com/iDavide94/trakt.tv#readme",
   "bugs": {
     "url": "https://github.com/iDavide94/trakt.tv/issues"
   },
-  "author": "Jean van Kasteel",
+  "author": {
+    "name": "Jean van Kasteel"
+  },
   "contributors": [
     "Davide"
   ],
