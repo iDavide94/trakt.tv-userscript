@@ -29,8 +29,7 @@ export default [
         plugins: [
           terser({
             compress: true,
-            mangle: true,
-            output: {}
+            mangle: true
           })
         ]
       }

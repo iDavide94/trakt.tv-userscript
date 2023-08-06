@@ -1,14 +1,14 @@
 {
-  "name": "@idavide94/trakt",
-  "version": "8.2.0",
+  "name": "trakt.tv-userscript",
+  "version": "1.0.0",
   "description": "Interact with Trakt.tv API in userscripts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iDavide94/trakt.tv.git"
+    "url": "https://github.com/iDavide94/trakt.tv-userscript.git"
   },
-  "homepage": "https://github.com/iDavide94/trakt.tv#readme",
+  "homepage": "https://github.com/iDavide94/trakt.tv-userscript#readme",
   "bugs": {
-    "url": "https://github.com/iDavide94/trakt.tv/issues"
+    "url": "https://github.com/iDavide94/trakt.tv-userscript/issues"
   },
   "author": {
     "name": "Jean van Kasteel"
@@ -42,12 +42,12 @@
     "cspell": "^6.31.2",
     "eslint": "^8.46.0",
     "eslint-config-greasemonkey": "^1.0.1",
-    "eslint-config-prettier": "^8.9.0",
-    "prettier": "^3.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.1",
     "prettier-config-standard": "^5.0.0",
     "prettier-plugin-pkg": "^0.18.0",
     "prettier-plugin-sort-json": "^1.0.0",
-    "rollup": "^3.27.0",
+    "rollup": "^3.27.2",
     "updates": "^14.3.4"
   }
 }
