@@ -19,7 +19,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
-    "dist/*"
+    "dist"
   ],
   "keywords": [
     "trakt",
@@ -49,5 +49,8 @@
     "prettier-plugin-sort-json": "^1.0.0",
     "rollup": "^3.27.2",
     "updates": "^14.3.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
