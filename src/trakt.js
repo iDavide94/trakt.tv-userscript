@@ -1,15 +1,15 @@
 'use strict'
 
 // requirejs modules
-import got from 'got'
-import { randomBytes } from 'crypto'
+import got from './libs/got'
+import { randomBytes } from './libs/crypto'
 import methods from './methods.json'
-import { name as _name, version, repository } from '../package.json'
+import pkg from '../package.json'
 
 // default settings
 const defaultUrl = 'https://api.trakt.tv'
 const redirectUrn = 'urn:ietf:wg:oauth:2.0:oob'
-const defaultUa = `${_name}/${version} (NodeJS; +${repository.url})`
+const defaultUa = `${pkg.name}/${pkg.version} (${pkg.homepage.split('#')[0]})`
 
 export default class Trakt {
   constructor(settings = {}, debug) {
