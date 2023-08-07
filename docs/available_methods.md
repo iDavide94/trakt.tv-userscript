@@ -1,6 +1,6 @@
-# Trakt.tv available methods
+# Trakt.tv for userscripts available methods
 
-This help doc was last generated for trakt.tv@8.2.0 on Mon Jul 31 2023
+This help doc was last generated for trakt.tv-userscript@1.0.0
 
 ## How to read the table ?
 
@@ -10,13 +10,13 @@ It's simple JS, here's how to use the table below:
 
 For example:
 
-```js
+```javascript
 trakt.shows.summary({ id: 'game-of-thrones' }).then(console.log)
 ```
 
 With optional arguments and pagination:
 
-```js
+```javascript
 trakt.seasons
   .comments({
     id: 'game-of-thrones',
