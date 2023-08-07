@@ -1,0 +1,11 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "prettier.configPath": "prettier.config.cjs",
+  "prettier.ignorePath": ".gitignore",
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true
+  }
+}

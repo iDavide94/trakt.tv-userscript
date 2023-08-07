@@ -1,27 +1,56 @@
 {
-    "name": "trakt.tv",
-    "version": "8.2.0",
-    "description": "Interact with Trakt.tv API in NodeJS",
-    "keywords": [
-        "trakt",
-        "api",
-        "wrapper",
-        "node"
-    ],
-    "main": "trakt.js",
-    "author": "Jean van Kasteel",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/vankasteelj/trakt.tv"
-    },
-    "bugs": {
-        "url": "https://github.com/vankasteelj/trakt.tv/issues"
-    },
-    "dependencies": {
-        "got": "11.8.6"
-    },
-    "scripts": {
-        "docs": "node docs/methods-generator"
-    }
+  "name": "trakt.tv-userscript",
+  "version": "1.0.0",
+  "description": "Interact with Trakt.tv API in userscripts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iDavide94/trakt.tv-userscript.git"
+  },
+  "homepage": "https://github.com/iDavide94/trakt.tv-userscript#readme",
+  "bugs": {
+    "url": "https://github.com/iDavide94/trakt.tv-userscript/issues"
+  },
+  "author": {
+    "name": "Jean van Kasteel"
+  },
+  "contributors": [
+    "Davide"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "trakt",
+    "api",
+    "wrapper",
+    "userscript"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "docs": "node docs/methods-generator.mjs && prettier --ignore-path .gitignore --write ./docs/available_methods.md",
+    "format": "prettier --ignore-path .gitignore --write .",
+    "lint": "prettier --ignore-path .gitignore --check . && cspell --gitignore . && eslint --ignore-path .gitignore .",
+    "update": "updates -u && yarn install",
+    "watch": "rollup -c -w"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "cspell": "^6.31.2",
+    "eslint": "^8.46.0",
+    "eslint-config-greasemonkey": "^1.0.1",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.1",
+    "prettier-config-standard": "^5.0.0",
+    "prettier-plugin-pkg": "^0.18.0",
+    "prettier-plugin-sort-json": "^1.0.0",
+    "rollup": "^3.27.2",
+    "updates": "^14.3.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
