@@ -1,4 +1,4 @@
-# Trakt.tv for userscripts
+# `@idavide94/trakt.tv-userscript`
 
 > _forked from [trakt.tv](https://github.com/vankasteelj/trakt.tv)_
 
@@ -13,14 +13,14 @@ _For more information about the trakt.tv API, read http://docs.trakt.apiary.io/_
 
 #### Setup
 
-Userscript require via [`@require`](https://wiki.greasespot.net/Metadata_Block#@require):
+Add to a userscript via [`@require`](https://wiki.greasespot.net/Metadata_Block#@require):
 
 ```javascript
-// @require   https://cdn.jsdelivr.net/npm/trakt.tv-userscript/dist/index.min.js
+// @require   https://cdn.jsdelivr.net/npm/@idavide94/trakt.tv-userscript/dist/index.min.js
 // @grant     GM.xmlHttpRequest
 ```
 
-> note: _using [`GM.xmlHttpRequest`](https://wiki.greasespot.net/GM.xmlHttpRequest) via [`@grant`](https://wiki.greasespot.net/@grant) is necessary for library working_
+> attention: _for the proper working of the library the use of [`GM.xmlHttpRequest`](https://wiki.greasespot.net/GM.xmlHttpRequest) via [`@grant`](https://wiki.greasespot.net/@grant) is required!_
 
 #### Initialize
 
@@ -194,4 +194,4 @@ See the [documentation](docs/writing_plugins.md).
 - You can use 'me' as username if the user is authenticated.
 - Timestamps (such as token _expires_ property) are Epoch in milliseconds.
 
-[^wip]: plugins are currently a work in progress for this fork
+[^wip]: plugins, and related docs, are currently a work in progress for this fork

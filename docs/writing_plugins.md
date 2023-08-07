@@ -1,8 +1,8 @@
-# How to write a plugin for Trakt.tv[^wip]
+# How to write a plugin for `@idavide94/trakt.tv-userscript`[^wip]
 
-Trakt.tv module can now be extended with plugins. Find the available plugins on npm or on [this curated list](plugins.md), they follow the naming convention "`trakt.tv-<plugin>`".
+`@idavide94/trakt.tv-userscript` module can now be extended with plugins. Find the available plugins on npm or on [this curated list](plugins.md), they follow the naming convention "`trakt.tv-<plugin>`".
 
-Writing a plugin is really easy and was made to add features to trakt.tv without having to fork it, or implement code that could break into the core module.
+Writing a plugin is really easy and was made to add features to `@idavide94/trakt.tv-userscript` without having to fork it, or implement code that could break into the core module.
 
 This is how a plugin module is composed:
 
@@ -35,14 +35,13 @@ The function "init" is absolutely mandatory, it's what's called automatically by
 The function "myAwesomeFunction" will display 'hello world'. Let's see how to use that function inside the main module.
 
 ```javascript
-var Trakt = require('trakt.tv')
 var trakt = new Trakt({
-  client_id: '',
-  client_secret: '',
+  client_id: '<the_client_id>',
+  client_secret: '<the_client_secret>',
   plugins: ['pluginname']
 })
 
 trakt.pluginname.myAwesomeFunction()
 ```
 
-[^wip]: plugins are currently a work in progress for this fork
+[^wip]: plugins, and related docs, are currently a work in progress for this fork

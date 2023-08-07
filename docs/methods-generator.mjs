@@ -8,7 +8,7 @@ const { name, version } = JSON.parse(readFileSync('./package.json'))
 let helpdoc = Array()
 
 // generator timestamp
-helpdoc.push(`# Trakt.tv for userscripts available methods\n\n\
+helpdoc.push(`# \`@idavide94/trakt.tv-userscript\` available methods\n\n\
 This help doc was last generated for ${name}@${version}\n\
 `)
 
