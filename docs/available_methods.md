@@ -1,6 +1,6 @@
 # `@idavide94/trakt.tv-userscript` available methods
 
-This help doc was last generated for @idavide94/trakt.tv-userscript@1.0.0
+This help doc was last generated for @idavide94/trakt.tv-userscript@1.0.1
 
 ## How to read the table ?
 
