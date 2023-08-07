@@ -16,12 +16,11 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@idavide94'
 
       - name: Install, Build and Publish
         run: |
           yarn install
           yarn run build
-          yarn npm publish
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
