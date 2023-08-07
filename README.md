@@ -1,9 +1,11 @@
-# trakt.tv
+# Trakt.tv for userscripts
 
-**Trakt.tv API wrapper for Node.js, featuring:**
+> _forked from [trakt.tv](https://github.com/vankasteelj/trakt.tv)_
+
+**Trakt.tv API wrapper for userscripts, featuring:**
 
 - [All Trakt.tv API v2 methods](docs/available_methods.md)
-- [Plugin extension](docs/plugins.md)
+- [Plugin extension](docs/plugins.md)[^wip]
 
 _For more information about the trakt.tv API, read http://docs.trakt.apiary.io/_
 
@@ -11,31 +13,36 @@ _For more information about the trakt.tv API, read http://docs.trakt.apiary.io/_
 
 #### Setup
 
-    npm install trakt.tv
+Userscript require via [`@require`](https://wiki.greasespot.net/Metadata_Block#@require):
+
+```javascript
+// @require   https://cdn.jsdelivr.net/npm/trakt.tv-userscript/dist/index.min.js
+// @grant     GM.xmlHttpRequest
+```
+
+> note: _using [`GM.xmlHttpRequest`](https://wiki.greasespot.net/GM.xmlHttpRequest) via [`@grant`](https://wiki.greasespot.net/@grant) is necessary for library working_
 
 #### Initialize
 
-```js
-const Trakt = require('trakt.tv');
-
-let options = {
-  client_id: <the_client_id>,
-  client_secret: <the_client_secret>,
-  redirect_uri: null,   // defaults to 'urn:ietf:wg:oauth:2.0:oob'
-  api_url: null,        // defaults to 'https://api.trakt.tv'
-  useragent: null,      // defaults to 'trakt.tv/<version>'
-  pagination: true      // defaults to false, global pagination (see below)
-};
-const trakt = new Trakt(options);
+```javascript
+const options = {
+  client_id: '<the_client_id>',
+  client_secret: '<the_client_secret>',
+  redirect_uri: null, // defaults to 'urn:ietf:wg:oauth:2.0:oob'
+  api_url: null, // defaults to 'https://api.trakt.tv'
+  useragent: null, // defaults to 'trakt.tv/<version>'
+  pagination: true // defaults to false, global pagination (see below)
+}
+const trakt = new Trakt(options)
 ```
 
-Add `debug: true` to the `options` object to get debug logs of the requests executed in your console.
+> note: _add `debug: true` to the `options` object to get debug logs of the requests executed in your console_
 
 #### OAUTH
 
 1. Generate Auth URL
 
-```js
+```javascript
 const traktAuthUrl = trakt.get_url()
 ```
 
@@ -43,7 +50,7 @@ const traktAuthUrl = trakt.get_url()
 
 3. Verify code (and optionally state for better security) from returned auth, and get a token in exchange
 
-```js
+```javascript
 trakt.exchange_code('code', 'csrf token (state)').then((result) => {
   // contains tokens & session information
   // API can now be used with authorized requests
@@ -52,7 +59,7 @@ trakt.exchange_code('code', 'csrf token (state)').then((result) => {
 
 #### Alternate OAUTH "device" method
 
-```js
+```javascript
 trakt
   .get_codes()
   .then((poll) => {
@@ -69,7 +76,7 @@ trakt
 
 #### Refresh token
 
-```js
+```javascript
 trakt.refresh_token().then((results) => {
   // results are auto-injected in the main module cache
 })
@@ -77,7 +84,7 @@ trakt.refresh_token().then((results) => {
 
 #### Storing token over sessions
 
-```js
+```javascript
 // get token, store it safely.
 const token = trakt.export_token()
 
@@ -89,7 +96,7 @@ trakt.import_token(token).then((newTokens) => {
 
 #### Revoke token
 
-```js
+```javascript
 trakt.revoke_token()
 ```
 
@@ -97,7 +104,7 @@ trakt.revoke_token()
 
 See methods in [methods.json](methods.json) or [the docs](docs/available_methods.md).
 
-```js
+```javascript
 trakt.calendars.all
   .shows({
     start_date: '2015-11-13',
@@ -109,7 +116,7 @@ trakt.calendars.all
   })
 ```
 
-```js
+```javascript
 trakt.search
   .text({
     query: 'tron',
@@ -120,7 +127,7 @@ trakt.search
   })
 ```
 
-```js
+```javascript
 trakt.search
   .id({
     id_type: 'imdb',
@@ -135,7 +142,7 @@ trakt.search
 
 You can extend your calls with `pagination: true` to get the extra pagination info from headers.
 
-```js
+```javascript
 trakt.movies
   .popular({
     pagination: true
@@ -143,9 +150,9 @@ trakt.movies
   .then((movies) => {
     /**
     movies = Object {
-        data: [<actual data from API>],
+      data: [<actual data from API>],
         pagination: {
-            item-count: "80349",
+          item-count: "80349",
             limit: "10",
             page: "1",
             page-count: "8035"
@@ -155,22 +162,22 @@ trakt.movies
   })
 ```
 
-Note: _this will contain `data` and `pagination` for all calls, even if no pagination is available (`result.pagination` will be `false`). it's typically for advanced use only_
+> note: _this will contain `data` and `pagination` for all calls, even if no pagination is available (`result.pagination` will be `false`). it's typically for advanced use only_
 
-#### Load plugins
+#### Load plugins[^wip]
 
 When calling `new Trakt()`, include desired plugins in an object (must be installed from npm):
 
-```js
+```javascript
 const trakt = new Trakt({
-    client_id: <the_client_id>,
-    client_secret: <the_client_secret>,
+  client_id: '<the_client_id>',
+    client_secret: '<the_client_secret>',
     plugins: {  // load plugins
         images: require('trakt.tv-images')
     }
     options: {  // pass options to plugins
         images: {
-            smallerImages: true
+          smallerImages: true
         }
     }
 });
@@ -178,7 +185,7 @@ const trakt = new Trakt({
 
 The plugin can be accessed with the key you specify. For example `trakt.images.get()`.
 
-#### Write plugins
+#### Write plugins[^wip]
 
 See the [documentation](docs/writing_plugins.md).
 
@@ -186,3 +193,5 @@ See the [documentation](docs/writing_plugins.md).
 
 - You can use 'me' as username if the user is authenticated.
 - Timestamps (such as token _expires_ property) are Epoch in milliseconds.
+
+[^wip]: plugins are currently a work in progress for this fork

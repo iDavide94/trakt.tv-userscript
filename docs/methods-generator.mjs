@@ -8,49 +8,49 @@ const { name, version } = JSON.parse(readFileSync('./package.json'))
 let helpdoc = Array()
 
 // generator timestamp
-helpdoc.push(`# Trakt.tv available methods \n\n\
-This help doc was last generated for ${name}@${version} on ${new Date().toDateString()}\n\
+helpdoc.push(`# Trakt.tv for userscripts available methods\n\n\
+This help doc was last generated for ${name}@${version}\n\
 `)
 
 // example
 helpdoc.push(
   "## How to read the table ?\n\n\
-It's simple JS, here's how to use the table below: \n\
-> method({required_argument: 'value'}) \n\n\
-For example: \n\
-```js \n\
-trakt.shows.summary({id: 'game-of-thrones'}).then(console.log) \n\
-``` \n\n\
-With optional arguments and pagination: \n\
-```js \n\
-trakt.seasons.comments({ \n\
-  id: 'game-of-thrones', \n\
-  season: 1, \n\
-  sort: 'likes', \n\
-  page: 1, \n\
-  limit: 5 \n\
-}).then(console.log) \n\
+It's simple JS, here's how to use the table below:\n\n\
+> method({required_argument: 'value'})\n\n\
+For example:\n\n\
+```javascript\n\
+trakt.shows.summary({ id: 'game-of-thrones' }).then(console.log)\n\
 ```\n\n\
-## Fields explanation \n\
-- **Method**: provided that `trakt` is the spawned instance of the 'trakt.tv' client, it's the function to call in order to request the API \n\
-- **OAUTH**: if you need a user to be authenticated and logged in to make the call \n\
+With optional arguments and pagination:\n\n\
+```javascript\n\
+trakt.seasons\n\
+  .comments({\n\
+    id: 'game-of-thrones',\n\
+    season: 1,\n\
+    sort: 'likes',\n\
+    page: 1,\n\
+    limit: 5\n\
+  })\n\
+  .then(console.log)\n\
+```\n\n\
+## Fields explanation\n\n\
+- **Method**: provided that `trakt` is the spawned instance of the 'trakt.tv' client, it's the function to call in order to request the API\n\
+- **OAUTH**: if you need a user to be authenticated and logged in to make the call\n\
 - **Required arguments**: they need to be passed as arguments (embedded in a object) to the Method function\n\
 - **Optional arguments**: arguments not required by the API, can also be embedded in the same object as above\n\
 - **Pagination**: you can send `pagination:true` in the object arg to trigger the pagination, or `page:X,limit:Y` (where X,Y are integers) to navigate in further calls\n\
 - **Extended**: the method can be extended with one (or all) of the keywords\n\
-- **Type**: the HTTP method used under the hood \n\
-- **URI**: the actual URL contacted at api.trakt.tv\n\n\
+- **Type**: the HTTP method used under the hood\n\
+- **URI**: the actual URL contacted at api.trakt.tv\n\
 "
 )
 
 // table markdown
-helpdoc.push('## Table')
+helpdoc.push('## Table\n')
 helpdoc.push(
   '| Method | OAUTH | Required arguments | Optional arguments | Pagination | Extended | Type | URI |'
 )
-helpdoc.push(
-  '|--------|:-----:|--------------------|--------------------|:----------:|----------|:----:|----:|'
-)
+helpdoc.push('|-|:-:|-|-|:-:|-|:-:|-:|')
 
 // methods
 for (let m in methods) {

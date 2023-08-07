@@ -1,4 +1,4 @@
-# How to write a plugin for Trakt.tv
+# How to write a plugin for Trakt.tv[^wip]
 
 Trakt.tv module can now be extended with plugins. Find the available plugins on npm or on [this curated list](plugins.md), they follow the naming convention "`trakt.tv-<plugin>`".
 
@@ -16,7 +16,7 @@ trakt.tv-pluginname:
 
 The `index.js` file has a few mandatory lines:
 
-```js
+```javascript
 var PluginNAME = (module.exports = {}) // Skeleton
 var Trakt // the main API for trakt (npm: 'trakt.tv')
 
@@ -34,7 +34,7 @@ The function "init" is absolutely mandatory, it's what's called automatically by
 
 The function "myAwesomeFunction" will display 'hello world'. Let's see how to use that function inside the main module.
 
-```js
+```javascript
 var Trakt = require('trakt.tv')
 var trakt = new Trakt({
   client_id: '',
@@ -44,3 +44,5 @@ var trakt = new Trakt({
 
 trakt.pluginname.myAwesomeFunction()
 ```
+
+[^wip]: plugins are currently a work in progress for this fork
