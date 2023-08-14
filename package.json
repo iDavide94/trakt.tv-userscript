@@ -1,6 +1,6 @@
 {
   "name": "@idavide94/trakt.tv-userscript",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Interact with Trakt.tv API in userscripts",
   "repository": {
     "type": "git",

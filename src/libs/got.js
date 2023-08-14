@@ -1,9 +1,17 @@
+const parseHeaders = (headers) => {
+  return headers.split('\r\n').reduce((accumulator, header) => {
+    const [key, value] = header.split(': ')
+    if (key && value) accumulator[key.toLowerCase()] = value.trim()
+    return accumulator
+  }, {})
+}
+
 const adapter = (response) => {
   return {
     statusCode: response.status,
     statusMessage: response.statusText,
     body: response.responseText,
-    headers: response.responseHeaders
+    headers: parseHeaders(response.responseHeaders)
   }
 }
 
