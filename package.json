@@ -39,16 +39,16 @@
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-terser": "^0.4.3",
-    "cspell": "^6.31.2",
-    "eslint": "^8.46.0",
+    "cspell": "^7.0.0",
+    "eslint": "^8.47.0",
     "eslint-config-greasemonkey": "^1.0.1",
     "eslint-config-prettier": "^9.0.0",
     "prettier": "^3.0.1",
-    "prettier-config-standard": "^5.0.0",
+    "prettier-config-standard": "^7.0.0",
     "prettier-plugin-pkg": "^0.18.0",
     "prettier-plugin-sort-json": "^1.0.0",
-    "rollup": "^3.27.2",
-    "updates": "^14.3.4"
+    "rollup": "^3.28.0",
+    "updates": "^14.3.5"
   },
   "publishConfig": {
     "access": "public"
