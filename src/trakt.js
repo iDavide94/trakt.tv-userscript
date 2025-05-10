@@ -154,8 +154,8 @@ export default class Trakt {
     const queryPart = method.url.split('?')[1]
     if (queryPart) {
       const queryParams = queryPart.split('&')
-      for (let i in queryParams) {
-        const name = queryParams[i].split('=')[0]
+      for (const queryParam of queryParams) {
+        const name = queryParam.split('=')[0]
         ;(params[name] || params[name] === 0) &&
           queryParts.push(`${name}=${encodeURIComponent(params[name])}`)
       }
@@ -164,21 +164,21 @@ export default class Trakt {
     // /part
     const pathPart = method.url.split('?')[0]
     const pathParams = pathPart.split('/')
-    for (let k in pathParams) {
-      if (pathParams[k][0] != ':') {
-        pathParts.push(pathParams[k])
+    for (const pathParam of pathParams) {
+      if (pathParam[0] != ':') {
+        pathParts.push(pathParam)
       } else {
-        const param = params[pathParams[k].substr(1)]
+        const param = params[pathParam.substr(1)]
         if (param || param === 0) {
           pathParts.push(param)
         } else {
           // check for missing required params
           if (
             method.optional &&
-            method.optional.indexOf(pathParams[k].substr(1)) === -1
+            method.optional.indexOf(pathParam.substr(1)) === -1
           )
             throw Error(
-              `Missing mandatory parameter: ${pathParams[k].substr(1)}`
+              `Missing mandatory parameter: ${pathParam.substr(1)}`
             )
         }
       }
