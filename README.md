@@ -2,6 +2,9 @@
 
 > _forked from [trakt.tv](https://github.com/vankasteelj/trakt.tv)_
 
+> [!CAUTION]
+> This repository is no longer maintained.
+
 **Trakt.tv API wrapper for userscripts, featuring:**
 
 - [All Trakt.tv API v2 methods](docs/available_methods.md)
