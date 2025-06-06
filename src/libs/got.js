@@ -1,6 +1,6 @@
 const parseHeaders = (headers) => {
   return headers.split('\r\n').reduce((accumulator, header) => {
-    const [key, value] = header.split(': ')
+    const [key, value] = header.split(':')
     if (key && value) accumulator[key.toLowerCase()] = value.trim()
     return accumulator
   }, {})
